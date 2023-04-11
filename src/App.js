@@ -12,10 +12,6 @@ function App() {
   const [accepted, setAccepted] = useState(false);
   const [disclaimerPage, setDisclaimerPage] = useState(1);
 
-  const handleAccept = () => {
-    setAccepted(true);
-  };
-
   const handleDisclaimerChange = () => {
     if (disclaimerPage === 1) {
       setDisclaimerPage(2);
@@ -26,6 +22,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* If Disclaimers aren't accepted user is redirected to Disclaimer Page, User cannot enter "/*" while not accepted, they can view terms however */}
       {!accepted && (
         <Routes>
           <Route
@@ -42,7 +39,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       )}
-
+      {/* Once accepeted User can access website */}
       {accepted && (
         <div>
           <nav>
