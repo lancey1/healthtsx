@@ -39,7 +39,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       )}
-      {/* Once accepeted User can access website */}
+      {/* Once accepted User can access website */}
       {accepted && (
         <div>
           <nav>
